@@ -59,10 +59,10 @@ for SITE in $(cat "site-list"); do
 	echo ""
 	echo ""
 	echo "--------------------------------------------------------------------------------"
-	echo "Sampling $SITE"
-	echo "id: $SHA"
+	echo "Sampling: $SITE"
+	echo "      id: $SHA"
 	echo "--------------------------------------------------------------------------------"
-	SOURCE="$TMPDIR/source/$SHA"
+	SOURCE="$TMPDIR/source/${SITE##*/}"
 	DESTINATION=${SOURCE/source/destination}
 	if [[ ! -d $SOURCE ]]; then
 		git clone --recurse-submodules -q "$SITE" "$SOURCE"
