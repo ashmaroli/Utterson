@@ -54,6 +54,9 @@ if [[ -d "$(pwd)/.sass-cache" ]]; then
 fi
 
 for SITE in $(cat "site-list"); do
+	echo ""
+	echo "Sampling $SITE"
+	echo "id: $MD5"
 	SOURCE="$TMPDIR/source/$($MD5 <<< $SITE)"
 	DESTINATION=${SOURCE/source/destination}
 	if [[ ! -d $SOURCE ]]; then
