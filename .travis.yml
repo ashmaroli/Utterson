@@ -14,7 +14,5 @@ before_install:
 before_script:
   - bundle update
 
-matrix:
-  include:
-  - script: bundle exec rubocop -D
-  - script: PR=7136 ./bench
+script:
+  - PR=7136 ./bench
