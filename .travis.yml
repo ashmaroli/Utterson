@@ -17,4 +17,4 @@ before_script:
 matrix:
   include:
   - script: bundle exec rubocop -D
-  - script: ./bench
+  - script: PR=7136 ./bench
