@@ -10,6 +10,8 @@ else
   gem "jekyll", git: repo, branch: "master"
 end
 
+gem "stackprof"
+
 gem "jekyll-sass-converter"
 gem "kramdown"
 gem "jekyll-commonmark-ghpages"
