@@ -8,8 +8,8 @@ before_install:
   - gem install bundler --version 1.16.2
 
 env:
-  global:
-    - PR=7136
+  # global:
+  #   - PR=7136
   matrix:
     - SITE=18F/federalist-docs
     - SITE=CloudCannon/aviator-jekyll-template
