@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+# Create tmp/ directory
+TMPDIR="$(pwd)/sources"
+mkdir -p "$TMPDIR"
+
+SOURCE="$TMPDIR/${SITE##*/}"
+
+git clone --recurse-submodules "https://github.com/$SITE" "$SOURCE"
+
+echo ""
+echo "Sampling: $SITE"
+echo "--------------------------------------------------------------------------------"

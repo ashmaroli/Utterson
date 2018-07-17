@@ -7,7 +7,28 @@ before_install:
   - gem update --system
   - gem install bundler --version 1.16.2
 
+env:
+  global:
+    - PR=7136
+  matrix:
+    - SITE=18F/federalist-docs
+    - SITE=CloudCannon/aviator-jekyll-template
+    - SITE=CloudCannon/base-jekyll-template
+    - SITE=CloudCannon/edition-jekyll-template
+    - SITE=CloudCannon/hydra-jekyll-template
+    - SITE=DirtyF/frank.taillandier.me
+    - SITE=Gaohaoyang/gaohaoyang.github.io
+    - SITE=github/choosealicense.com
+    - SITE=grantmakers/grantmakers.github.io
+    - SITE=mmistakes/minimal-mistakes
+    - SITE=parkr/stuff
+    - SITE=tomjoht/tomjoht.github.io
+    - SITE=twbs/bootstrap-blog
+
 before_script:
   - bundle update
 
-script: ./bench
+script:
+  - bash script/bootstrap
+  - bundle exec ruby script/stackprof
+  - bundle exec stackprof tmp/stackprof/stackprof.dump
