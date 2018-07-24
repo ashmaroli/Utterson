@@ -8,8 +8,8 @@ before_install:
   - gem install bundler
 
 before_script:
-  - bundle update
+  - PR=7136 bundle update
 
 script:
   - git clone --recurse-submodules https://github.com/tomjoht/tomjoht.github.io.git tomjoht-docs
-  - bundle exec jekyll build -s tomjoht-docs -d tomjoht-docs/_site --profile
+  - PR=7136 bundle exec jekyll build -s tomjoht-docs -d tomjoht-docs/_site --profile
