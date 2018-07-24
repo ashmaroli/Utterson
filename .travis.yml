@@ -12,4 +12,4 @@ before_script:
 
 script:
   - git clone --recurse-submodules https://github.com/tomjoht/tomjoht.github.io.git tomjoht-docs
-  - PR=7136 bundle exec jekyll build -s tomjoht-docs -d tomjoht-docs/_site --profile
+  - PR=7136 bundle exec jekyll build -s tomjoht-docs -d tomjoht-docs/_site --profile --verbose --trace
