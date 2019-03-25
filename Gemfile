@@ -6,6 +6,8 @@ if ENV["REF"]
   gem "jekyll", git: repo, ref: ENV["REF"]
 elsif ENV["PR"]
   gem "jekyll", git: repo, ref: "refs/pull/#{ENV['PR']}/head"
+elsif ENV["LATEST_GEM"]
+  gem "jekyll"
 else
   gem "jekyll", git: repo, branch: "master"
 end

@@ -1,6 +1,11 @@
 language: ruby
-rvm: 2.4
 cache: bundler
+
+rvm:
+  - 2.6
+  - 2.5
+  - 2.4
+  - 2.3
 
 branches:
   only:
@@ -13,9 +18,5 @@ before_install:
 before_script:
   - bundle update
 
-matrix:
-  include:
-  - name: Rubocop
-    script: bundle exec rubocop -D
-  - name: bench
-    script: ./bench
+env:
+  global: LATEST_GEM=true
